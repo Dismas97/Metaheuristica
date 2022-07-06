@@ -1,8 +1,79 @@
 import pathlib
 import numpy as np,random
 from pylatex import Document, Section, Subsection,Itemize
-
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+import random
 #---------------- UTILIDADES ---------------
+
+
+'''
+  Parametros = W , ARRAY
+    a=[0,0]
+    b=[0,5]
+    c=[7,0]
+    d=[7,5]
+    width = c[0] - a[0]
+    height = d[1] - a[1]
+    lims = (0, 50)
+[(4, 15), (15, 3),                     
+(6, 6), (3, 12), (4, 6), (2, 8),       
+(8, 2), (3, 5),                       
+(10, 3)]'''                           
+def getRectangulo(rectangulos,solucion,indice):
+    r = (0,0)
+    print(rectangulos)
+    print(solucion)
+    print(indice)
+    if(solucion[1][indice] == 0):
+        r = rectangulos[solucion[0][indice]]
+    else:
+        r = obtener_rotado(rectangulos[solucion[0][indice]])
+    print('fin getRectangulo', r.width,r.height)
+    return r
+def render(grafico,pos,ancho,largo):    
+    colors=['green','red', 'blue','yellow','orange','purple','brown','black','grey','pink']
+    #print(pos)
+    #Rectangulo
+    patch = patches.Rectangle(pos, ancho, largo, color =random.choice(colors))
+    grafico.add_patch(patch) # Dibujar 
+    
+def dibujacion(rectangulos,solucion):
+    print('dibujeMstr') # Me devuelve el orden de los rectangulos sin los bools 
+    # giladas de la libreria 
+    fig1 = plt.figure()
+    grafico = fig1.add_subplot(111, aspect='equal') 
+    # armando grafico
+    W=20
+    # solucion = [(4, 15), (15, 3), (6, 6), (3, 12), (4, 6), (2, 8), (8, 2), (3, 5), (10, 3)]
+    anchoAcumulado = 0
+    altoAcumulado = 0
+    nivel = 0
+    x = 0
+    for i in range(len(solucion[0])):
+        r = getRectangulo(rectangulos,solucion,i)
+        ancho=r.width
+        alto=r.height
+        #ancho = solucion[i][0]
+        #alto = solucion[i][1]
+        anchoAcumulado = anchoAcumulado + ancho 
+        print(ancho)
+        print(alto)
+        if(W < anchoAcumulado):
+            nivel = nivel + altoAcumulado
+            anchoAcumulado = ancho
+            x = 0
+            altoAcumulado = 0
+        render(grafico,(x, nivel),ancho,alto) # Devuelve la tupla (x,y)
+        if(altoAcumulado < alto):
+            altoAcumulado = alto
+        x = x + ancho
+
+    plt.ylim((0, 40)) # Limite grafico
+    plt.xlim((0, W))
+#dibujacion()
+#    solucion = [(4, 15), (15, 3), (6, 6), (3, 12), (4, 6), (2, 8), (8, 2), (3, 5), (10, 3)]
+
 '''
   #Exporta los datos estadisticos a un archivo .tex
   #Documentation : https://jeltef.github.io/PyLaTeX/latest/index.html
@@ -17,6 +88,8 @@ def estadisticasToLatex(Estadisticas):
         doc.append('En esta seccion mostraremos algunos resultados obtenidos de las multiples ejecuciones de diferentes instancias del problema.')
         doc.append('También, posteriormente un analisis, comparación y evaluación de estos resultados')
         for stats in Estadisticas:
+            print("in Estadisticas")
+            dibujacion(stats[0],stats[6]) # problema, solucion (rectangulos, posicion)
             if(not stats[2]):
                 subtitulo = 'Resultados instancia: '
                 subtitulo = subtitulo + stats[1]
@@ -49,6 +122,7 @@ def estadisticasToLatex(Estadisticas):
                     itemize.add_item(desve)  
         # making a pdf using .generate "_pdf" "_tex"   -> doc.dumps_as_content()<- Para imprimir texto plano latex.
     doc.generate_tex('Estadisticas') 
+
 # -------------- FIN UTILIDADES --------------
 # --------------- GA - SPP -------------------
 #LEER FROM ARCHIVO
@@ -325,31 +399,43 @@ def ga_spp(cant,seed,sin_prints,files):
     return mejor_puntaje - mejor_puntaje_rotacion
 
 #Instancia del problema con con 10 rectangulos
-repeticiones = 20
+repeticiones = 2
 diferencia_puntaje=0
 instancias = ["spp9a.txt","spp9b.txt","spp10.txt","spp11.txt","spp12.txt","spp13.txt"] 
+estadisticas = []
 sin_prints = True
 for i in instancias:
     progreso_mejores = []
     progreso_mejores_rotacion = []
-    mejores = []
     mejores_rotacion=[]
-
-    for j in range(20):
-        problema, resultados, resultados_rotacion = ga_spp2(j,i)
+    mejor_actual = float('inf')
+    mejor_actual_rotacion = float('inf')
+    for j in range(repeticiones):
+        problema, resultados, resultados_rotacion = ga_spp2(j,i) #    return rectangles, [mejor_puntaje,mejor_solucion],[mejor_puntaje_rotacion,mejor_solucion_rotacion]
+        if(float(resultados[0]) < mejor_actual):
+            mejor_actual = resultados[0]
+            mejor_sol = resultados[1]
+        #print(resultados[1])#ACAME TRAE LA MEJOR SOLUCION QUE QUIERO 
         progreso_mejores.append(resultados[0])
+        if(float(resultados[0]) < mejor_actual_rotacion):
+            mejor_actual_rotacion = resultados_rotacion[0]
+            mejor_sol_rotacion = resultados_rotacion[1]
         progreso_mejores_rotacion.append(resultados_rotacion[0])
     #Sin Rotacion
     media = np.average(progreso_mejores)
     mediana = np.median(progreso_mejores)
     desviacion = np.std(progreso_mejores)
+    estadisticas.append([problema,i,False,media,mediana,desviacion,mejor_sol])
     #Con Rotacion
     media_rotacion = np.average(progreso_mejores_rotacion)
     mediana_rotacion = np.median(progreso_mejores_rotacion)
     desviacion_rotacion = np.std(progreso_mejores_rotacion)
-#estadisticasToLatex(estadisticas)
+    estadisticas.append([problema,i,True,media_rotacion,mediana_rotacion,desviacion_rotacion,mejor_sol_rotacion])
+estadisticasToLatex(estadisticas)
+   
+'''
     print("*****************----------------****************")
-    print("Problema: W=",W,problema,"\n Instancia: ",i)
+    print("Problema: ",problema,"\n Instancia: ",i)
     print("Media : ", media)
     print("Mediana : ", mediana)
     print("Desviacion : ", desviacion)
@@ -357,3 +443,16 @@ for i in instancias:
     print("Media_rotacion : ", media_rotacion)
     print("Mediana_rotacion : ", mediana_rotacion)
     print("Desviacion_rotacion : ", desviacion_rotacion)
+
+
+
+
+for i in range(repeticiones):
+  diferencia_puntaje = diferencia_puntaje + ga_spp(10,i,sin_prints)
+print("Diferencia promedio de algoritmos: (+rotacion)(-sin rotacion)",diferencia_puntaje/repeticiones)
+#Instancia del problema con con 20 rectangulos
+diferencia_puntaje=0
+for i in range(repeticiones):
+  diferencia_puntaje = diferencia_puntaje + ga_spp(20,i,sin_prints)
+print("Diferencia promedio de algoritmos: (+rotacion)(-sin rotacion)",diferencia_puntaje/repeticiones)
+'''
