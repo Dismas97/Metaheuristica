@@ -48,45 +48,34 @@ Los Algoritmos Geneticos conocidos como GA por sus siglas en ingles Genetic Algo
 
 \subsection{Funciones Akcley}
 
-Las funciones de prueba son importantes para validar y comparar el rendimiento de los algoritmos de optimización algoritmos de optimización. En la literatura se han publicado muchas funciones de prueba o de referencia; Sin embargo, no existe una lista o conjunto estándar de funciones de referencia. Lo ideal es que las funciones de prueba deben tener diversas propiedades para que puedan ser realmente útiles para probar nuevos algoritmos de una
-de forma imparcial.
+\t Las funciones de prueba son importantes para validar y comparar el rendimiento de los algoritmos de optimización algoritmos de optimización. En la literatura se han publicado muchas funciones de prueba o de referencia; Sin embargo, no existe una lista o conjunto estándar de funciones de referencia. Lo ideal es que las funciones de prueba deben tener diversas propiedades para que puedan ser realmente útiles para probar nuevos algoritmos de una de forma imparcial.
 
-La comprobación de la fiabilidad, la eficiencia y la validación de los algoritmos de optimización se lleva a cabo con frecuencia utilizando un conjunto elegido de puntos de referencia estándar comunes o funciones de prueba de la literatura. El número de funciones de prueba en la mayoría de los artículos varía entre unas pocas y unas dos docenas. Lo ideal sería que las funciones de prueba utilizadas fueran diversas e insesgadas, pero no existe un conjunto de funciones de prueba acordado en la literatura. Por lo tanto, el principal objetivo de este artículo es revisar y recopilar el conjunto más completo de funciones de prueba que podemos encontrar en toda la de todas las publicaciones disponibles, de modo que puedan utilizarse para la futura validación y comparación de los algoritmos de optimización. algoritmos de optimización.
+En general, los problemas sin restricciones pueden clasificarse en dos categorías: funciones de prueba y los problemas del mundo real.\newline
 
-En general, los problemas sin restricciones pueden clasificarse en dos categorías: funciones de prueba y los problemas del mundo real. Las funciones de prueba son problemas artificiales, y pueden utilizarse para evaluar el comportamiento de un algoritmo en situaciones a veces diversas y difíciles. Los problemas artificiales pueden incluir un único mínimo global, uno o varios mínimos globales en presencia de muchos mínimos locales, valles largos y estrechos, efectos de espacio nulo y superficies planas. Estos problemas pueden ser fácilmente manipulados y modificados para probar los algoritmos en diversos escenarios. Por otro lado, los Por otra parte, los problemas del mundo real se originan en diferentes campos como la física, la química ingeniería, matemáticas, etc. Estos problemas son difíciles de manipular y pueden contener expresiones algebraicas o diferenciales complicadas y pueden requerir una cantidad significativa de de datos para compilarlos.
+\t Las funciones de prueba son problemas artificiales, y pueden utilizarse para evaluar el comportamiento de un algoritmo en situaciones a veces diversas y difíciles. Los problemas artificiales pueden incluir un único mínimo global, uno o varios mínimos globales en presencia de muchos mínimos locales, valles largos y estrechos, efectos de espacio nulo y superficies planas. 
+\t Por otro lado, los problemas del mundo real se originan en diferentes campos como la física, la química ingeniería, matemáticas, etc. Estos problemas son difíciles de manipular y pueden contener expresiones algebraicas o diferenciales complicadas y pueden requerir una cantidad significativa de datos para compilarlos.
 
-En el presente trabajo, nos centraremos en los puntos de referencia de la función de prueba y sus diversas propiedades como la modalidad y la separabilidad. Una función con más de un óptimo local se denomina multimodal. Estas funciones se utilizan para probar la capacidad de un algoritmo para escapar de cualquier mínimo local. Si el proceso de exploración de un algoritmo está mal diseñado
-entonces no puede buscar el paisaje de funciones de manera efectiva. Esto, a su vez, hace que un algoritmo se quede atascado en un mínimo local. Las funciones multimodales con muchos mínimos locales se encuentran entre la clase de problemas más difícil para muchos algoritmos. Las funciones con superficies planas suponen una
-dificultad para los algoritmos, ya que la planitud de la función no da al algoritmo ninguna información para dirigir el proceso de búsqueda hacia los mínimos (Stepint, Matyas, PowerSum).
-Otro grupo de problemas de prueba está formulado por funciones separables y no separables. Según [16], la dimensionalidad del espacio de búsqueda es una cuestión importante del problema. En algunas funciones, el área que contiene ese mínimo global es muy pequeña, cuando se compara con todo el espacio de búsqueda, como Easom, Michalewicz (m=10) y Powell. En problemas como Perm, Kowalik y Schaffer, el mínimo global se encuentra muy cerca de los mínimos locales. Si el algoritmo no puede mantener los cambios de dirección en las funciones con un valle curvo estrecho, en el caso de funciones como Beale, Colville, o no puede explorar el espacio de búsqueda de forma efectiva, en el caso de funciones como Pen Holder, Testtube-Holder que tienen múltiples mínimos globales, el algoritmo fallará para este tipo de problemas. Otro problema que algoritmos pueden sufrir es el problema de la escala con muchos órdenes de magnitud diferencias entre el dominio y la hiper-superficie de la función [47], como Goldstein-Price y Trid.
+\t Una función con más de un óptimo local se denomina multimodal. Estas funciones se utilizan para probar la capacidad de un algoritmo para escapar de cualquier mínimo local. Si el proceso de exploración de un algoritmo está mal diseñado entonces no puede buscar en el paisaje de funciones de manera efectiva. Esto, a su vez, hace que un algoritmo se quede atascado en un mínimo local. Las funciones multimodales con muchos mínimos locales se encuentran entre la clase de problemas más difícil para muchos algoritmos. 
+\t Las funciones con superficies planas suponen una dificultad para los algoritmos, ya que la planitud de la función no da al algoritmo ninguna información para dirigir el proceso de búsqueda hacia los mínimos.\newline
 
-Las funciones ackley son funciones muy fieras por que le hacen nana a los GA.[5]
-
+Entonces, la comprobación del comportamiento, la fiabilidad, la eficiencia y la validación de los algoritmos de optimización se lleva a cabo con frecuencia utilizando un conjunto elegido de puntos de referencia estándar comunes o funciones de prueba de la literatura.[5]
 
 \section{Descripción del Problema}
-En el problema  de Strip Packing (SPP) o empaquetado de tiras bidimensionales tenemos, una tira de anchura finita W pero de altura infinita, y un conjunto de elementos rectangulares de anchura máxima W. 
-	El objetivo es empaquetar todos los elementos en la tira para minimizar la altura utilizada. Los elementos no pueden solaparse ni girarse(estudiaremos un caso en el que si puedan rotar). 
-Dentro del mismo nivel, todos los elementos se empaquetan de forma que sus fondos queden alineados. El primer nivel es el fondo de la tira y los niveles siguientes se definen por la altura del artículo más alto del nivel anterior.
-	Este es un problema de mucho interes de estudio ya que forma parte del a familia de problemas $NP-Hard$, es decir no se ha encontrado una solución en un tiempo polinomico.
 
-\subsection{Definicion:}
+En este breve trabajo de estudio de algoritmos metaheuristicos, utilizaremos los dos enfoques o modelos algoritmicos descriptos en la seccion previa. Que son el algoritmo genetico y de evolución diferencial los cuales construiremos y pondremos a prueba frente a un conjunto acotado de funciones de prueba extraidas de la bibliografía[5], para, luego de extraer los resultados obtenidos, realizar un analisis comparativo de su comportamiento frente a diversos aspectos.
+
+
+\subsection{Conjunto de funciones Ackley a utilizar}
 %$  X  $
-Una instancia $ I = (R,W)$  del problema de empaquetado de tiras consiste en una tira con anchura $W = 1$ y altura infinita, así como un conjunto $R$  de elementos rectangulares. Cada elemento $r   \in   R$ tiene una anchura  $w_r \in  (0,1]  \cap  Q $ y una altura  $h_r     \in   (0,1] \cap Q $. Un empaquetamiento de los elementos es un mapeo en cada esquina inferior izquierda de un elemento $r    \in   R$  a una posición $(x_r,y_r) \in([0,1 - w_r] \cap Q) \times Q\geq 0$ en el interior de la franja. 
-Un punto interior de un elemento colocado $ r \in  R $ es un punto del conjunto $inn(r)={(x,y) \in Q\times Q | x_r < x_r + w_r , y_r<y_r+h_r}$ .
-Dos elementos (colocados) se solapan si comparten un punto interior. La altura del empaquetamiento se define como $ \max \{ y_r + h_r | r \in R\} $. El objetivo es encontrar un empaquetamiento libre de solapamiento de los elementos dentro de la franja minimizando la altura del empaquetamiento.
+F1 ) 
 
- En este informe utilizaremos una serie de instancias 
-contenidas en ("spp9a.txt", "spp9b.txt", "spp10.txt", "spp11.txt", "spp12.txt", "spp13.txt") las cuales varian en su conjunto $R$ y en $W$.
+F2 ) 
+
+F3 ) 
 
 \section{Propuesta algorítmica} % El titulo de esta y el resto de las secciones es orientativa
 
-\t Una forma comun de atacar este problema es el enfoque orientado al nivel, los rectangulos se insertan de izquierda a derecha, en filas que forman niveles. Dentro del mismo nivel, todos los elementos se empaquetan de forma que sus fondos se alineen. El primer nivel es el fondo de la tira y los niveles siguientes se definen por la altura del rectangulo más alto del nivel anterior.
- 
-\t Algunos algoritmos comienzan ordenando los artículos por altura no creciente, suelen denominarse de altura decreciente \textbf{DH}, y orientados al nivel. Varaciones de dicho algoritmo son los algoritmos First-Fit Decreasing Height \textbf{FFD}, Next-Fit Decreasing Height \textbf{NFD} y Best-Fit Decreasing Height \textbf{BFDH}.[5]
-
-Existen muchas mas variaciones, nosotros utilizaremos un enfoque orientado al nivel, pero en vez de ordenar los elementos por su altura, utilizaremos un enfoque metaheuristico poblacionall, mas precisamente un algoritmo genetico que encuentre una solucion aproximada aceptable a nuestro problema.
-
-\subsection{¿Que es un Algoritmo Genetico?}
+\subsection{El algoritmo Genetico}
 
 Un algoritmo genetico es una metaheuristica poblacional inspirada en el proceso de la seleccion natural.
 
@@ -104,7 +93,8 @@ En cuanto a la mutacion utilizaremos una \textit{permutacion simple} entre dos g
 
 A medida que avanzan las generaciones, en cada poblacion iran quedando aquellos individuos que cuentan con los "mejores"  genes de generaciones anteriores, por tanto los de mejor desempeño. Recuperando al mejor individuo historico (de todas las generaciones) obtenemos una solucion aproximada aceptable.
 
-\subsection{Aplicacion a SPP}
+\subsection{El algoritmo Evolucion Diferencial}
+
 En nuestro caso particular contaremos con diferentes $(R,W)$ por achivo. Los cuales representan un $W$ y serie de rectangulos $r_i \in R$ donde $R$ es el conjunto de rectangulos totales que conforman nuestro problema. Si tomamos una secuencia ordenada de rectangulos particular $S_i = (r_0,r_1,..,r_n)$, la cual representa el orden de insercion de los rectangulos a la hora de realizar el corte, obtendremos asi una solucion o individuo si tomamos dicha secuencia $S_i$ como un cromosma de $I_i$, la posicion de cada rectangulo en el cromosoma es un gen:
 
 $$I_i = S_i$$
