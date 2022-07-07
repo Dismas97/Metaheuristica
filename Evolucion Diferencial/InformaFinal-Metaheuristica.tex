@@ -62,6 +62,7 @@ En general, los problemas sin restricciones pueden clasificarse en dos categorí
 
 \t Una función con más de un óptimo local se denomina multimodal. Estas funciones se utilizan para probar la capacidad de un algoritmo para escapar de cualquier mínimo local. Si el proceso de exploración de un algoritmo está mal diseñado entonces no puede buscar en el paisaje de funciones de manera efectiva. Esto, a su vez, hace que un algoritmo se quede atascado en un mínimo local. Las funciones multimodales con muchos mínimos locales se encuentran entre la clase de problemas más difícil para muchos algoritmos. 
 \t Las funciones con superficies planas suponen una dificultad para los algoritmos, ya que la planitud de la función no da al algoritmo ninguna información para dirigir el proceso de búsqueda hacia los mínimos.\newline
+\t Una función de p variables se llama separable, si se puede escribir como una suma de p funciones de una sola variable
 
 Entonces, la comprobación del comportamiento, la fiabilidad, la eficiencia y la validación de los algoritmos de optimización se lleva a cabo con frecuencia utilizando un conjunto elegido de puntos de referencia estándar comunes o funciones de prueba de la literatura.[5]
 
@@ -73,20 +74,25 @@ En este breve trabajo de estudio de algoritmos metaheuristicos, utilizaremos los
 \subsection{Conjunto de funciones Ackley a utilizar}
 %$  X  $
 
-\textbf{Akcley1(x) = } $$ -20e^{-0.02}\sqrt{D^{-1}\sum_{i=1}^{D}x_{i}^2}-e^{D-1\sum_{i=1}^{D}cos(2\pi x_i)}+20+e$$
+\textbf{Ackley 1 Function: } (continua, diferenciable, no separable, escalable, multimodal)
+ $$ f_1(x) = -20e^{-0.02}\sqrt{D^{-1}\sum_{i=1}^{D}x_{i}^2}-e^{D-1\sum_{i=1}^{D}cos(2\pi x_i)}+20+e$$
+\textbf{Óptimo global del intervalo} 
+$$[-35\leq x_i \leq 35], x^* = (0,..., 0), f_1(x^*) = 0$$
 
-\textbf{Óptimo global del intervalo} $$[-35\leq x_i \leq 35], ak1(x^*) = 0$$
+\textbf{Akcley 2  Function:  } (continua, diferenciable, no separable, no escalable,unimodal)
+$$ f_2(x) = -200e^{-0.02}\sqrt{x_1^2+x_2^2}$$
+\textbf{Óptimo global del intervalo}
+ $$[-32\leq x_i \leq 32], x^* = (0,0), f_2(x^*) = -200$$
 
+\textbf{Akcley 3  Function:  } (continua, diferenciable, no separable, no escalable, unimodal)
+$$ f_3(x) = 200e^{-0.02}\sqrt{x_1^2+x_2^2}+5e^{cos(3x_1)+sin(3x_2)}$$
+\textbf{Óptimo global del intervalo} 
+$$[-32\leq x_i \leq 32], x^* = (0, \approx -0.4), f_3(x^*) \approx -219.1418$$
 
-\textbf{Akcley2(x) = } $$-200e^{-0.02}\sqrt{x_1^2+x_2^2}$$
-
-\textbf{Óptimo global del intervalo} $$[-32\leq x_i \leq 32], ak2(x^*) = -200$$
-
-\textbf{Akcley3(x) = } $$200e^{-0.02}\sqrt{x_1^2+x_2^2}+5e^{cos(3x_1)+sin(3x_2)}$$
-\textbf{Óptimo global del intervalo} $$[-32\leq x_i \leq 32], x^* = (0, \approx -0.4), akl3(x^*) \approx -219.1418$$
-
-\textbf{Akcley4(x) = } $$ \sum_{i=1}^{D}(e^{-0.2}\sqrt{x_i^2+x_{i+1}^2}+3(cos(2x_i)+sin(2x_{i+1}))$$
-\textbf{Óptimo global del intervalo} $$[-35\leq x_i \leq 35], x=f(\{-1.479252,-0.739807\},\{1.479252,-0.739807\}), f(x^*) \approx -3.917275$$ 
+\textbf{Akcley 4  Function: } (continua, diferenciable, no separable, escalable, multimodal)
+$$f_4(x) =  \sum_{i=1}^{D}(e^{-0.2}\sqrt{x_i^2+x_{i+1}^2}+3(cos(2x_i)+sin(2x_{i+1}))$$
+\textbf{Óptimo global del intervalo} 
+$$[-35\leq x_i \leq 35], x=f(\{-1.479252,-0.739807\},\{1.479252,-0.739807\}), f(x^*) \approx -3.917275$$ 
 
 \section{Propuesta algorítmica} % El titulo de esta y el resto de las secciones es orientativa
 
