@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.14)  7 JUL 2022 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.14)  7 JUL 2022 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,37 +521,44 @@ File: ack-4-de.jpg Graphic file (type jpg)
 Package pdftex.def Info: ack-4-de.jpg  used on input line 195.
 (pdftex.def)             Requested size: 351.56256pt x 210.03416pt.
  [10 <./ack-4-ga.jpg> <./ack-4-de.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
 []\OT1/cmr/m/n/10 .[][Wikipedia][]$\OT1/cmtt/m/n/10 https : / / en . wikipedia 
 . org / wiki / Evolutionary _
  []
 
+[11]
 (C:\Users\Fran\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-[11] (InformaFinal-Metaheuristica.toc
+[12] (InformaFinal-Metaheuristica.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write5
 \openout5 = `InformaFinal-Metaheuristica.toc'.
 
- [12] (InformaFinal-Metaheuristica.aux
+ [13] (InformaFinal-Metaheuristica.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `InformaFinal-Metaheuristica.out' has not cha
-nged.
-(rerunfilecheck)             Checksum: 822DA9EE86BAD8D2BC9AB296F36F9514;1991.
+
+Package rerunfilecheck Warning: File `InformaFinal-Metaheuristica.out' has chan
+ged.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `InformaFinal-Metaheuristica.out':
+(rerunfilecheck)             Before: 822DA9EE86BAD8D2BC9AB296F36F9514;1991
+(rerunfilecheck)             After:  708525DFA0F0FA3C3BF628DB09CBA23A;2210.
  ) 
 Here is how much of TeX's memory you used:
- 12000 strings out of 478582
- 188921 string characters out of 2844816
- 678268 words of memory out of 3000000
- 29987 multiletter control sequences out of 15000+600000
+ 12003 strings out of 478582
+ 188947 string characters out of 2844816
+ 678034 words of memory out of 3000000
+ 29988 multiletter control sequences out of 15000+600000
  475315 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,74p,804b,1268s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -576,9 +583,9 @@ type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Fran/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Fran/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on InformaFinal-Metaheuristica.pdf (12 pages, 461086 bytes).
+Output written on InformaFinal-Metaheuristica.pdf (13 pages, 462539 bytes).
 PDF statistics:
- 266 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
  137 words of extra memory for PDF output out of 10000 (max. 10000000)
 
