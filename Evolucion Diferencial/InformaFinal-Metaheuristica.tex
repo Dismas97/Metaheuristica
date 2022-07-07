@@ -32,6 +32,11 @@ Debido a esta problematica, se comenzará con la definicion de conceptos básico
 %----------------------------------------------------------------------------------------
 
 \section{Introducción}
+
+X=10
+
+$X=10$
+
 \subsection{\textbf{GA}- Algoritmo Genético }
 
 Los Algoritmos Geneticos conocidos como GA por sus siglas en ingles Genetic Algorithm, son una analogía a la selección natural, es decir, que estan inspirados en ella.
@@ -72,6 +77,7 @@ $$f_1(x) = -20e^{-0.02}\sqrt{D^{-1}\sum_{i=1}^{D}x_{i}^2}-e^{D-1\sum_{i=1}^{D}co
 
 $$-35\leq x_i \leq 35, f(x^*) = 0$$
 
+
 $$f_2(x) = -200e^{-0.02}\sqrt{x_1^2+x_2^2}$$
 
 $$-32\leq x_i \leq 32, f(x^*) = -200$$
@@ -104,72 +110,20 @@ A medida que avanzan las generaciones, en cada poblacion iran quedando aquellos 
 
 \subsection{El algoritmo Evolucion Diferencial}
 
-En nuestro caso particular contaremos con diferentes $(R,W)$ por achivo. Los cuales representan un $W$ y serie de rectangulos $r_i \in R$ donde $R$ es el conjunto de rectangulos totales que conforman nuestro problema. Si tomamos una secuencia ordenada de rectangulos particular $S_i = (r_0,r_1,..,r_n)$, la cual representa el orden de insercion de los rectangulos a la hora de realizar el corte, obtendremos asi una solucion o individuo si tomamos dicha secuencia $S_i$ como un cromosma de $I_i$, la posicion de cada rectangulo en el cromosoma es un gen:
+La evolución diferencial es un enfoque heurístico para la optimización global de funciones espaciales continuas no lineales y no diferenciables. 
 
-$$I_i = S_i$$
-$$S_i = (r_0,r_1,..,r_n)$$
-$$I_i = \{(r_0,r_1,..,r_n)\}$$
+El algoritmo comienza iniciando aleatoriamente una población de vectores de decisión de valor real, también conocidos como genomas o cromosomas. Estos representan las soluciones candidatas al problema de optimización multidimensional.\newline
+En cada iteración, el algoritmo introduce mutaciones en la población para generar nuevas soluciones candidatas. El proceso de mutación añade la diferencia ponderada entre dos vectores de la población a un tercer vector, para producir un vector mutado. Los parámetros del vector mutado se mezclan de nuevo con los parámetros de otro vector predeterminado, el vector objetivo, durante un proceso conocido como cruce que pretende aumentar la diversidad de los vectores de parámetros perturbados. El vector resultante se conoce como vector de prueba.
+Estas mutaciones se generan de acuerdo con una estrategia de mutación, que sigue una convención de nomenclatura general de $DE/x/y/z$ , donde DE significa Evolución Diferencial, mientras que x denota el vector a ser mutado, y denota el número de vectores de diferencia considerados para la mutación de x, y z es el tipo de cruce en uso. Por ejemplo, las estrategias populares
 
-En nuestro problema particular veremos la diferencia entre aplicar un enfoque sin rotacion y con rotacion, para la representacion del estado de cada rectangulo en la solucion (girado o no girado) utilizaremos nuevo cromosoma con la forma de un vector mascara $Mr$ el cual estara formado por una secuencia de valores booleanos $(b_0, b_1,...,b_n)$ donde $b_i$ indica si $r_i \in I$ esta rotado o no, luego la solucion $$I_i$$ es un par ordenado de la forma:
+$ DE/rand/1/bin y DE/best/2/bin $ especifican que el vector x puede elegirse al azar (rand) de la población, o bien se selecciona el vector con el menor coste (best); que el número de vectores de diferencia considerados es 1 o 2; y que el cruce se realiza según experimentos binomiales independientes (bin).
 
-$$I_i = \{S_i,Mr_i\}$$
-$$S_i = (r_0,r_1,..,r_n)$$
-$$Mr_i = (m_0, m_1,...,m_n)$$
+Una última operación de selección sustituye el vector objetivo, o el padre, por el vector de prueba, su descendiente, si este último arroja un valor de función objetivo menor. De este modo, el descendiente más apto se convierte en un miembro de la nueva población generada, y posteriormente participa en la mutación de otros miembros de la población. Estas iteraciones continúan hasta que se alcanza un criterio de terminación. (como el agotamiento de las evaluaciones funcionales máximas).
 
-%PRIMERO ANCHO, DESPUES ALTURA
+El algoritmo de evolución diferencial requiere muy pocos parámetros para funcionar, a saber, el tamaño de la población, NP, un factor de escala real y constante, $F \in [0, 2] $, que pondera la variación diferencial durante el proceso de mutación, y una tasa de cruce, $ CR \in  [0, 1]$ , que se determina experimentalmente. Esto hace que el algoritmo sea fácil y práctico de utilizar. [6]
 
-Por ejemplo, si tuvieramos un conjunto de rectangulos $r_0=(2,2),r_1=(5,2),r_2=(3,5), r_3 = (3,1), r_4=(2,4)\in R$, un ancho de tira $W = 7$, la solucion $I_0 = \{S_0,Mr_0\}$ con la forma $S_0 = (r_0,r_1,r_2,r_4,r_3), Mr_0 = (0,0,1,0,1)$ es:
+En este caso utilizaremos un algoritmo de evolución diferencial con el esquema $ " DE/rand/1/bin " $ para ejecutar con las funciones ackley.
 
-%\begin{figure}[H]
-%\centerline{\includegraphics[width=0.7\linewidth]{grafica_ejemplo_solucion_GA.jpg}}
-%\caption{Representacion grafica de la solucion $I_0$}
-%\label{fig_1}
-%\end{figure}
-
-Evaluaremos el desempeño de las soluciones en base a la menor altura de dicha solucion, por ejemplo, si tomamos la solucion $I_0$, su desempeño seria $f(I_0) = 9$ en cambio una solucion $I_1 = \{S_1,Mr_1\}$ con la forma $S_1 = (r_1,r_2,r_0,r_3,r_4), Mr_1 = (0,0,0,0,0)$, tendria un desempeño $f(I_1) = 11$, con dicho criterio de evaluacion podemos decir que $I_0$ es mejor solucion al problema que $I_1$ y por tanto es mas probable de ser seleccionada para reproducirse y volverse progenitora de individuos en siguientes generaciones.
-
-%\begin{figure}[H]
-%\centerline{\includegraphics[width=0.7\linewidth]{grafica_ejemplo_solucion2_GA.jpg}}
-%\caption{Representacion grafica de la solucion $I_1$}
-%\label{fig_2}
-%\end{figure}
-
-Supongamos ahora que vamos a reproducir ambas soluciones $I_0,I_1$. Recordemos que existia una probabilidad asociada a la mutacion como al evolucionar. Si dichas probabilidades no se cumplen (los hijos no evolucionan ni mutan) simplemente heredaran los genes de sus progenitores, el hijo $H_0 = I_0, H_1 = I_1$, los progenitores "pasarian" a la siguiente generacion sin cambios.
-
-En caso de que se produzca un cruce (evolucion) el operador PMX trabajara con ambos progenitores de la siguiente forma: 
-Se toma un intervalo aleatorio en el cromosoma de la solucion, por ejemplo $b = [1,3]$ en $I_0$ el rango abarcaria $S_0[1,2] = (r_0,r_1), Mr_0[1,2] = (0,0)$ y en $I_1$, $S_1[1,3] = (r_1,r_2), Mr_1[1,2] = (0,0)$.
-
-Generamos dos hijos $H_0 = I_0, H_1 = I_1$, tomamos los genes del intervalo
-$$H_0[1,2] = \{(r_0,r_1),(0,0)\}, H_1[1,2] = \{(r_1,r_2),(0,0)\}$$
-
-Intercambiamos los genes con el progenitor opuesto:
-$$H_0[1,2] = I_1[1,2] = \{(r_1,r_2),(0,0)\}, H_1[1,2] = I_0[1,2] = \{(r_0,r_1),(0,0)\}$$ 
-
-Los hijos nos quedan de la forma: 
-$$H_0=\{(r_1,r_2,r_2,r_4,r_3),(0,0,1,0,1)\}, H_1 = \{(r_0,r_1,r_0,r_3,r_4),(0,0,0,0,0)\}$$
-
-Podemos ver que los rectangulos $r_2, r_0$ se encuentran repetidos en $H_0$ y $H_1$ respectivamente, para corregir esto tomamos aquellos genes repetidos que quedaron fuera del intervalo $b$ en este caso el tercer gen de cada cromosoma y lo reemplazamos por un rectangulo aleatorio faltante $r_0, r_2$ respectivamente, obteniendo como resultado:
-$$H_0=\{(r_1,r_2,r_0,r_4,r_3),(0,0,0,0,1)\}, H_1 = \{(r_0,r_1,r_2,r_3,r_4),(0,0,0,0,0)\}$$
-
-Ahora dado que al recuperar el rectangulo faltante en cada hijo, lo insertamos por defecto, es decir, sin rotar, tomaremos el tercer gen del cromosoma $Mr_i$ y lo reemplazaremos por un valor booleano aleatorio, nos quedaria de la siguiente forma:
-$$H_0=\{(r_1,r_2,r_0,r_4,r_3),(0,0,0,0,1)\}, H_1 = \{(r_0,r_1,r_2,r_3,r_4),(0,0,1,0,0)\}$$
-
-Suponiendo una mutacion en alguno de los hijos, $H_0$, simplemente permutamos dos genes y su valor booleano respectivo, por ejemplo intercambiamos $r_1,r_3$ y $m_0,m_4$ en $H_0$ obteniendo:
-$$H_0=\{(r_3,r_2,r_0,r_4,r_1),(1,0,0,0,0)\}$$
-
-Tambien mutaremos el cromosoma $M_0$ independiente de $S_0$, por ejemplo $m_0,m_1$:
-$$H_0=\{(r_3,r_2,r_0,r_4,r_1),(0,1,0,0,0)\}$$
-
-Con estas bases podemos encarar el problema de forma general, recordando: 
-Un problema, $R = \{r_0,r_1,..,r_n\}$
-Una poblacion inicial $P_0={i_0,i_1,...,i_k}$ donde cada individuo es de la forma:
-$I_i = \{S_i,Mr_i\}$ donde $S_i = (r_0,r_1,..,r_n), Mr_i = (m_0, m_1,...,m_n)$, $|R| = |S_i| = |Mr_i|$
-
-A cada inviduo $I_j \in P_i$ se lo evaluara en funcion a su altura total (se considerara o no el valor booleano respectivo a cada rectangulo, para evaluarlo rotado o no dependiendo si permitimos rotaciones en el algoritmo). Se los hara competir entre si de forma aleatoria, solo la mitad de la poblacion podra reproducirse, la nueva generacion obtenida $P_{i+1}$ tendra como individuos a los hijos de los progenitores que lograron reproducirse en la generacion anterior (algunos mutados o con cruzamiento). 
-
-De esta manera la mayoria de individuos existentes son hijos de aquellos con mejor desempeño, aquellos con menor desempeño tendran menos probabilidades de reproducirse, pero nunca 0\% con esto evitamos la desaparicion de ciertas combinaciones interesantes logrando mas variedad en la poblacion que puede resultar en mejores soluciones inesperadas que no hubiesen ocurrido de haber descartado los individuos con menor desempeño.
-
-El GA ira guardando la mejor solucion historica y los mejores puntajes de cada generacion, asi podemos ver como fue "evolucionando" la poblacion y cual fue la mejor solucion de todas. Una implementacion en Python de dicho algoritmo podemos encontrar en el apendice del informe, en esta implementacion podemos indicar si queremos o no habilitar la posibilidad de rotar los rectangulos.
 
 \section{Resultados y estadisticas} % o Experimentos realizados o Estudio realizado
  
@@ -217,8 +171,7 @@ Prof. Guillermo Leguizamon
 \bibitem3.\t[Wikipedia]{}\url{https://en.wikipedia.org/wiki/Gradient_descent}
 \bibitem4.\t[Wikipedia]{}\url{https://en.wikipedia.org/wiki/Quasi-Newton_method}
 \bibitem5.\t[Cornell University - Ithaca, New York]{}\url{https://arxiv.org/abs/1308.4008v1} A Literature Survey of Benchmark Functions For Global Optimization Problems
-
-
+\bibitem6.\t[ Machine Learning Mastery ]{}\url{https://machinelearningmastery.com/differential-evolution-from-scratch-in-python } Differential Evolution from Scratch in Python
 
 
 \end{thebibliography} 
