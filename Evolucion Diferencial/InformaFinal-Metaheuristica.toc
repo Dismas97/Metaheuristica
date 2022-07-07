@@ -1,0 +1,13 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}\textbf {GA}- Algoritmo Genético }{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}\textbf {DE}- Evolución Diferencial }{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Funciones Akcley}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Descripción del Problema}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Conjunto de funciones Ackley a utilizar}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Propuesta algorítmica}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}El algoritmo Genetico}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}El algoritmo Evolucion Diferencial}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Resultados}{6}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Conclusiones}{6}{section.4}%
+\contentsline {section}{\numberline {5}Código del Algoritmo}{7}{section.5}%

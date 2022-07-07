@@ -22,8 +22,9 @@
 
 \begin{abstract}
 
-El objetivo de este documento será el estudio, analisis y comparación de dos algoritmos metaheuristicos poblacionales, Algoritmo Genético \textbf{GA} y Evolución Diferencial  \textbf{DE}. Los mismos serán sometidos a una serie de pruebas en funciones complejas conocidas  \textit{Ackley 1, Ackley 2, Ackley 3 y Ackley 4 }con variacion en el tamaño de las dimensiones. Luego, se verá el desepeño de dichos algoritmos descubriendo cual es el metodo mas adecuado para la resolucion de problemas en un espacio grande de soluciones complejas de optimizar. 
-Debido a esta problematica, se comenzará con la definicion de conceptos básicos necesarios, alguna mención del estado del arte al día de la fecha, y expondremos las  implementaciones y consideraciones de las soluciones. Finalmente se procedera a la comparacion de los resolutados del objeto de estudio y por que  \textbf{DE} es novedoso.
+El objetivo de este documento será el estudio, análisis y comparación de dos Metaheurísticas Poblacionales, los Algoritmos Genéticos \textbf{GA} y la Evolución Diferencial \textbf{DE}. Los mismos serán sometidos a una serie de pruebas con funciones, las funciones de testeo \textit{Ackley 1, Ackley 2, Ackley 3 y Ackley 4 }. Luego, se verá el desempeño de dichos algoritmos descubriendo cuál es el método más adecuado para la resolución de problemas en un espacio grande de soluciones complejas de optimizar.
+
+Se comenzará con la definición de conceptos básicos necesarios, el estado actual de las metaheurísticas poblacionales, y expondremos las  implementaciones y consideraciones de las soluciones. Finalmente, se procederá a la comparación de los resultados del objeto de estudio.
 
 \end{abstract}
 
@@ -33,42 +34,59 @@ Debido a esta problematica, se comenzará con la definicion de conceptos básico
 
 \section{Introducción}
 
-X=10
+Una metaheurística del griego "meta" ("más allá") y "heurístico" ("encontrar") es un proceso o método heurístico de alto nivel diseñado para resolver un tipo de problema de optimización, usando parámetros dados por el usuario sobre unos procedimientos genéricos y abstractos buscando obtener la mejor solución o al menos, una solución aproximada eficiente, especialmente con información incompleta o imperfecta, o capacidad de cómputo limitada.
 
-$X=10$
+Las metaheurísticas son aplicadas cuando un problema dado no cuenta con un algoritmo o heurística especifica que de una solución satisfactoria al problema o, la implementación de dicho algoritmo no es posible, ya sea por tiempo, espacio o simplemente la tecnología actual no está a la altura.
+
+Las metaheurísticas pueden hacer relativamente pocas suposiciones sobre el problema de optimización que se está resolviendo y, por lo tanto, pueden usarse para una variedad de problemas
+
+\subsection*{Clasificacion de Metaheuristicas}
+Existen distintas maneras de clasificar una metaheurística, nos enfocaremos en dos tipos: Metaheurísticas inspiradas en la Naturaleza y Metaheurísticas Poblacionales.
+
+El enfoque poblacional mantiene y mejora múltiples soluciones candidatas, a menudo utilizando características de la población para guiar la búsqueda, a diferencia de enfoques de solución única, los cuales se centran en modificar y mejorar una única solución candidata.
+
+El diseño de metaheuristicas inspiradas en la naturaleza, especialmente los algoritmos basados en computación evolutiva, están fuertemente inspiradas en sistemas naturales como pueden ser la organización de ciertas especies (lobos, hormigas, abejas, etc.), sistemas más "generales" como las leyes de la física o naturaleza (gravedad, selección natural, etc.). 
+
+La naturaleza actúa como una fuente de conceptos, mecanismos y principios para el diseño de sistemas informáticos artificiales para hacer frente a problemas informáticos complejos.
 
 \subsection{\textbf{GA}- Algoritmo Genético }
 
-Los Algoritmos Geneticos conocidos como GA por sus siglas en ingles Genetic Algorithm, son una analogía a la selección natural, es decir, que estan inspirados en ella.
+Un algoritmo genético es una metaheurística poblacional inspirada en el proceso de la selección natural.
 
-\t Se trabaja con un conjunto de soluciones al que llamaremos \textbf{poblacion}, cada solucion particular o \textbf{individuo} es representada por medio de un vector de valores discretos llamado \textbf{cromosomas}. A los simbolos que conforman dichos vectores se les llama \textbf{genes}. Los cromosomas evolucionan a lo largo de distintas iteraciones, las llamadas \textbf{generaciones}. En cada generacion, los cromosomas son evaluados usando alguna medida de aptitud o funcion objetivo. Las siguientes generaciones, nuevos cromosomas, son generadas aplicando operadores genéticos repetidamente a la generacion actual, siendo estos los operadores de selección (selection), cruzamiento (crossover), mutación (mutation) y reemplazo.
+Se trabaja con un conjunto de soluciones al que llamaremos \textbf{población}, cada solución particular o \textbf{individuo} es representada por medio de un vector de valores discretos llamado \textbf{cromosomas}. A los símbolos que conforman dichos vectores se les llama \textbf{genes}. Los cromosomas evolucionan a lo largo de distintas iteraciones, las llamadas \textbf{generaciones}. En cada generación, los cromosomas son evaluados usando alguna medida de aptitud o función objetivo. Las siguientes generaciones, nuevos cromosomas, son generadas aplicando operadores genéticos repetidamente a la generación actual, siendo estos los operadores de selección (selection), cruzamiento (crossover), mutación (mutation) y reemplazo.
 
 \subsection{\textbf{DE}- Evolución Diferencial }
-\t En la computación evolutiva (  Familia de algoritmos de optimización global inspirados en la evolución biológica - rama de la Inteligencia Artificial )[2], evolución diferencial es un método que optimiza un problema intentando mejorar una solucion candidata iterativamente con respecto a una medida de calidad determinada. Estos metodos son comunmente conocidos como "Metaheuristicas", ya que no hace ninguna suposición(o muy pocas)  sobre el problema que se está optimizando y puede buscar espacios muy grandes de soluciones candidatas. Sin embargo, las metaheuristicas como DE no garantizan encontrar la solucion optima.
+En la computación evolutiva (Familia de algoritmos de optimización global inspirados en la evolución biológica - rama de la Inteligencia Artificial)[2], evolución diferencial es un método que optimiza un problema intentando mejorar una solución candidata iterativamente con respecto a una medida de calidad determinada. Estos métodos son comúnmente conocidos como "Metaheurísticas", ya que no hace ninguna suposición(o muy pocas) sobre el problema que se está optimizando y puede buscar espacios muy grandes de soluciones candidatas. Sin embargo, las metaheurísticas como DE no garantizan encontrar la solución óptima.
 
-\t  DE es usado para funciones multidimencionales de valores Reales, sin utilizar el "gradiente" del problema a ser optimizado, en otras palabras, \textbf{DE} no requiere o no necesita que el problema a optimizar sea diferenciable, como en el clasico caso del metodo de "descenso del gradiente" [3] o "Quasi-Newton method" [4]. Por lo tanto, la evolucion diferencial también puede utilizarse en problemas de optimización que ni siquiera son continuos, son ruidosos, cambian con el tiempo, etc.
-\t La ED optimiza un problema manteniendo una población de soluciones candidatas y creando nuevas soluciones candidatas combinando las existentes según sus sencillas fórmulas, y quedándose con la solución candidata que tenga la mejor puntuación o aptitud en el problema de optimización en cuestión. De este modo, el problema de optimización se trata como una caja negra que simplemente proporciona una medida de calidad dada una solución candidata y, por tanto, el gradiente no es necesario.
+DE es usado para funciones multidimensionales de valores Reales, sin utilizar el "gradiente" del problema a ser optimizado, en otras palabras, DE no requiere o no necesita que el problema a optimizar sea diferenciable, como en el clásico caso del método de "descenso del gradiente" [3] o "Quasi-Newton method" [4]. Por lo tanto, la evolución diferencial también puede utilizarse en problemas de optimización que ni siquiera son continuos, son ruidosos, cambian con el tiempo, etc.
 
-\t La ED fue introducida por Storn y Price en la década de 1990. Se han publicado libros sobre los aspectos teóricos y prácticos del uso de la ED en la computación paralela, la optimización multiobjetivo y la optimización restringida, ymuchos otros estudios en diversas áreas de aplicación. 
+La DE optimiza un problema manteniendo una población de soluciones candidatas y creando nuevas soluciones candidatas, combinando las existentes según sus sencillas fórmulas, y quedándose con la solución candidata que tenga la mejor puntuación o aptitud en el problema de optimización en cuestión. De este modo, el problema de optimización se trata como una caja negra que simplemente proporciona una medida de calidad dada una solución candidata y, por tanto, el gradiente no es necesario.
+
+La DE fue introducida por Storn y Price en la década de 1990. Se han publicado libros sobre los aspectos teóricos y prácticos del uso de la ED en la computación paralela, la optimización multiobjetivo y la optimización restringida, y muchos otros estudios en diversas áreas de aplicación. 
 
 \subsection{Funciones Akcley}
 
-\t Las funciones de prueba son importantes para validar y comparar el rendimiento de los algoritmos de optimización algoritmos de optimización. En la literatura se han publicado muchas funciones de prueba o de referencia; Sin embargo, no existe una lista o conjunto estándar de funciones de referencia. Lo ideal es que las funciones de prueba deben tener diversas propiedades para que puedan ser realmente útiles para probar nuevos algoritmos de una de forma imparcial.
+Las funciones de prueba son una excelente herramienta para validar y comparar el rendimiento de distintos algoritmos de optimización
 
-En general, los problemas sin restricciones pueden clasificarse en dos categorías: funciones de prueba y los problemas del mundo real.\newline
+Si bien se han publicado muchas funciones de prueba o de referencia, no existe una lista o conjunto estándar de funciones. Lo ideal es que las funciones de prueba deben tener diversas propiedades para que puedan ser realmente útiles para probar nuevos algoritmos de una de forma imparcial.
 
-\t Las funciones de prueba son problemas artificiales, y pueden utilizarse para evaluar el comportamiento de un algoritmo en situaciones a veces diversas y difíciles. Los problemas artificiales pueden incluir un único mínimo global, uno o varios mínimos globales en presencia de muchos mínimos locales, valles largos y estrechos, efectos de espacio nulo y superficies planas. 
-\t Por otro lado, los problemas del mundo real se originan en diferentes campos como la física, la química ingeniería, matemáticas, etc. Estos problemas son difíciles de manipular y pueden contener expresiones algebraicas o diferenciales complicadas y pueden requerir una cantidad significativa de datos para compilarlos.
+En general, los problemas sin restricciones pueden clasificarse en dos categorías: funciones de prueba y los problemas del mundo real.
 
-\t Una función con más de un óptimo local se denomina multimodal. Estas funciones se utilizan para probar la capacidad de un algoritmo para escapar de cualquier mínimo local. Si el proceso de exploración de un algoritmo está mal diseñado entonces no puede buscar en el paisaje de funciones de manera efectiva. Esto, a su vez, hace que un algoritmo se quede atascado en un mínimo local. Las funciones multimodales con muchos mínimos locales se encuentran entre la clase de problemas más difícil para muchos algoritmos. 
-\t Las funciones con superficies planas suponen una dificultad para los algoritmos, ya que la planitud de la función no da al algoritmo ninguna información para dirigir el proceso de búsqueda hacia los mínimos.\newline
-\t Una función de p variables se llama separable, si se puede escribir como una suma de p funciones de una sola variable
+Las funciones de prueba son problemas artificiales, y pueden utilizarse para evaluar el comportamiento de un algoritmo en situaciones a veces diversas y difíciles. Los problemas artificiales pueden incluir un único mínimo global, uno o varios mínimos globales en presencia de muchos mínimos locales, valles largos y estrechos, efectos de espacio nulo y superficies planas. 
+
+Por otro lado, los problemas del mundo real se originan en diferentes campos como la física, la química ingeniería, matemáticas, etc. Estos problemas son difíciles de manipular y pueden contener expresiones algebraicas o diferenciales complicadas y pueden requerir una cantidad significativa de datos para compilarlos.
+
+Una función con más de un óptimo local se denomina multimodal. Estas funciones se utilizan para probar la capacidad de un algoritmo para escapar de cualquier mínimo local. Si el proceso de exploración de un algoritmo está mal diseñado, entonces no puede buscar en el paisaje de funciones de manera efectiva. Esto, a su vez, hace que un algoritmo se quede atascado en un mínimo local. Las funciones multimodales con muchos mínimos locales se encuentran entre la clase de problemas más difícil para muchos algoritmos. 
+
+Las funciones con superficies planas suponen una dificultad para los algoritmos, ya que la planitud de la función no da al algoritmo ninguna información para dirigir el proceso de búsqueda hacia los mínimos.
+
+Una función de p variables se llama separable, si se puede escribir como una suma de p funciones de una sola variable
 
 Entonces, la comprobación del comportamiento, la fiabilidad, la eficiencia y la validación de los algoritmos de optimización se lleva a cabo con frecuencia utilizando un conjunto elegido de puntos de referencia estándar comunes o funciones de prueba de la literatura.[5]
 
 \section{Descripción del Problema}
 
-En este breve trabajo de estudio de algoritmos metaheuristicos, utilizaremos los dos enfoques o modelos algoritmicos descriptos en la seccion previa. Que son el algoritmo genetico y de evolución diferencial los cuales construiremos y pondremos a prueba frente a un conjunto acotado de funciones de prueba extraidas de la bibliografía[5], para, luego de extraer los resultados obtenidos, realizar un analisis comparativo de su comportamiento frente a diversos aspectos.
+En este breve trabajo de estudio de metaheurísticas poblacionales, utilizaremos los dos enfoques o modelos algorítmicos descritos en la sección previa. GA y DE, los cuales implementaremos y pondremos a prueba frente a un conjunto acotado de funciones de prueba extraídas de la bibliografía[5], para, luego de extraer los resultados obtenidos, realizar un análisis comparativo de su comportamiento frente a diversos aspectos.
 
 
 \subsection{Conjunto de funciones Ackley a utilizar}
@@ -98,25 +116,23 @@ $$[-35\leq x_i \leq 35], x=f(\{-1.479252,-0.739807\},\{1.479252,-0.739807\}), f(
 
 \subsection{El algoritmo Genetico}
 
-Un algoritmo genetico es una metaheuristica poblacional inspirada en el proceso de la seleccion natural.
-
-Contamos con una poblacion $P$, dicha poblacion esta formada por un conjunto de soluciones individuos $I$, cada individuo $I$ esta representado por un conjunto de cromosomas, los cuales a su vez estan formados una secuencia de genes $g_i$ de valor discreto, que representan una solucion al problema, formalmente:
+Contamos con una población $P$, dicha población está formada por un conjunto de soluciones individuos $I$, cada individuo $I$ está representado por un conjunto de cromosomas, los cuales a su vez están formados una secuencia de genes $g_i$ de valor discreto, que representan una solución al problema, formalmente:
 
 $$P =\{i_0,i_1,..,i_n\}$$
 $$I =\{(g_0,g_1,..,g_n)_0,(g_0,g_1,..,g_n)_1,...,(g_0,g_1,..,g_n)_n\}$$
 
-Se toman todos los individuos de la poblacion $I \in P$, se obtiene una medida de "desempeño" de cada solucion $I$, aquellos con mejor desempeño son mas propensos a reproducirse, como sucede en la seleccion natural donde los mas aptos sobreviven y tienen mas posibilidades de trasmitir sus genes.
+Se toman todos los individuos de la población $I \in P$, se obtiene una medida de "desempeño" (las funciones Ackley seran nuestra medida de desempeño) de cada solución $I$, aquellos con mejor desempeño son más propensos a reproducirse, como sucede en la selección natural, donde los más aptos sobreviven y tienen más posibilidades de trasmitir sus genes.
 
-Existen distintas formas de seleccionar que individuos se reproducen, nosotros utilizaremos la \textit{"seleccion basada en torneos"} la cual consiste en seleccionar de forma aleatoria dos individuos distintos de la poblacion, y , aquel con mejor desempeño sera quien pueda reproducirse y por tanto sus genes seran "heredados" en la siguiente poblacion $P$. Sumado a esto existe una probabilidad de cruza y mutacion de los genes al reproducirse.
+Existen distintas formas de seleccionar que individuos se reproducen, nosotros utilizaremos la \textit{"selección basada en torneos"} la cual consiste en seleccionar de forma aleatoria dos individuos distintos de la población, y, aquel con mejor desempeño será quien pueda reproducirse y, por tanto, sus genes serán "heredados" en la siguiente población $P$. Sumado a esto, existe una probabilidad de cruza y mutación de los genes al reproducirse.
 
-Para la primera utilizaremos el operador de cruce \textbf{PMX} o \textit{cruce por emparejamiento parcial}. Consiste en elegir un subsegmento de los genes de uno de los progenitores y cruzarlos preservando el orden y la posición de la mayor cantidad de genes posible del otro manteniendo la coherencia.
-En cuanto a la mutacion utilizaremos una \textit{permutacion simple} entre dos genes aleatorios $g_i,g_j$ del mismo individuo.
+Para la primera utilizaremos el operador de cruce \textbf{PMX} o \textit{cruce por emparejamiento parcial}. Consiste en elegir un sub-segmento de los genes de uno de los progenitores y cruzarlos, preservando el orden y la posición de la mayor cantidad de genes posible del otro manteniendo la coherencia.
+En cuanto a la mutación, tomaremos un gen aleatorio y (basado en una probabilidad) le sumaremos o restaremos un escalar proporcional a la distancia del valor del gen a los límites permitidos.
 
-A medida que avanzan las generaciones, en cada poblacion iran quedando aquellos individuos que cuentan con los "mejores"  genes de generaciones anteriores, por tanto los de mejor desempeño. Recuperando al mejor individuo historico (de todas las generaciones) obtenemos una solucion aproximada aceptable.
+A medida que avanzan las generaciones, en cada población irán quedando aquellos individuos que cuentan con los "mejores" genes de generaciones anteriores, por tanto, los de mejor desempeño. Recuperando al mejor individuo histórico (de todas las generaciones) obtenemos una solución aproximada aceptable.
 
 \subsection{El algoritmo Evolucion Diferencial}
 
-La evolución diferencial es un enfoque heurístico para la optimización global de funciones espaciales continuas no lineales y no diferenciables. 
+La evolución diferencial es un enfoque heurístico para la optimización global de funciones espaciales continuas, no lineales y no diferenciables. 
 
 El algoritmo comienza iniciando aleatoriamente una población de vectores de decisión de valor real, también conocidos como genomas o cromosomas. Estos representan las soluciones candidatas al problema de optimización multidimensional.\newline
 En cada iteración, el algoritmo introduce mutaciones en la población para generar nuevas soluciones candidatas. El proceso de mutación añade la diferencia ponderada entre dos vectores de la población a un tercer vector, para producir un vector mutado. Los parámetros del vector mutado se mezclan de nuevo con los parámetros de otro vector predeterminado, el vector objetivo, durante un proceso conocido como cruce que pretende aumentar la diversidad de los vectores de parámetros perturbados. El vector resultante se conoce como vector de prueba.
@@ -126,41 +142,14 @@ $ DE/rand/1/bin y DE/best/2/bin $ especifican que el vector x puede elegirse al 
 
 Una última operación de selección sustituye el vector objetivo, o el padre, por el vector de prueba, su descendiente, si este último arroja un valor de función objetivo menor. De este modo, el descendiente más apto se convierte en un miembro de la nueva población generada, y posteriormente participa en la mutación de otros miembros de la población. Estas iteraciones continúan hasta que se alcanza un criterio de terminación. (como el agotamiento de las evaluaciones funcionales máximas).
 
-El algoritmo de evolución diferencial requiere muy pocos parámetros para funcionar, a saber, el tamaño de la población, NP, un factor de escala real y constante, $F \in [0, 2] $, que pondera la variación diferencial durante el proceso de mutación, y una tasa de cruce, $ CR \in  [0, 1]$ , que se determina experimentalmente. Esto hace que el algoritmo sea fácil y práctico de utilizar. [6]
+El algoritmo de evolución diferencial requiere muy pocos parámetros para funcionar, a saber, el tamaño de la población, NP, un factor de escala real y constante, $F \in [0, 2] $, que pondera la variación diferencial durante el proceso de mutación, y una tasa de cruce, $ CR \in  [0, 1]$, que se determina experimentalmente. Esto hace que el algoritmo sea fácil y práctico de utilizar. [6]
 
-En este caso utilizaremos un algoritmo de evolución diferencial con el esquema $ " DE/rand/1/bin " $ para ejecutar con las funciones ackley.
+En este caso utilizaremos un algoritmo de evolución diferencial con el esquema $ " DE/rand/1/bin " $ para ejecutar con las funciones Ackley.
 
-
-\section{Resultados y estadisticas} % o Experimentos realizados o Estudio realizado
- 
-Probamos el algoritmo en seis instancias diferente del problema, cada instancia fue ejecutada $20$ veces con diferentes semillas $i=0,1...,19$. A continuacion presentamos las estadisticas de las mejores soluciones sin rotacion y con rotacion:
-
-\label{sec:Estadisticas}%
-
-En esta seccion mostraremos algunos resultados obtenidos de las multiples ejecuciones de diferentes instancias del problema.%
-También, posteriormente un analisis, comparación y evaluación de estos resultados%
-\subsection{Resultados instancia}%
-
-\label{subsec:}%
-
-Problema :  \newline%
-%
- Algoritmo: %
-
-%Grafico
-%\begin{figure}[H]
-%\centerline{\includegraphics[width=0.5\linewidth]{6_con_rotar.jpg}}
-%\caption{Grafico de Instancia SPPA13 con rotacion }
-%\label{fig_12}
-%\end{figure} 
-
-Podemos observar como el permitir rotaciones de rectangulos se aprovecha mejor es espacio de la tira para todas las instancias, reduciendo asi la cantidad de desperdicio de forma sustancial. Para este tipo de problemas de alta complejidad vemos que los algoritmos geneticos tienen un desempeño mas que aceptable, siendo una excelente forma de encarar este tipo de problemas.
-
+\subsection{Resultados}%
+A continuación presentamos las estadísticas de las mejores soluciones para cada función Ackley de cada algoritmo en 20 ejecuciones con diferentes semillas.
 
 \section{Conclusiones}
-Dada la simplesa de los algoritmos y su desempeño a la hora de encontrar una solucion eficiente, las metaheuristicos poblacionales, en este caso Algoritmos Geneticos, son una excelente forma de atacar problemas de complejidad NP hard cuya funcion de evaluacion sea simple (minimo valor posible) como es el caso de SPP, problema que surje en distintas areas ademas de las obvias como pueden ser aprovechamiento de material (madera, vidrio, metal,etc) como en la computacion donde se modelan jobs que requieren una parte contigua de la memoria durante un período de tiempo determinado entre otros.
-
-Por ultimo, los GA, son una prometedora herramienta para la industria.
 
 %------------------------------------------------ 
 \section*{Agradecimientos}
