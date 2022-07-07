@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.14)  7 JUL 2022 11:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.14)  7 JUL 2022 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -351,6 +351,28 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 ) (InformaFinal-Metaheuristica.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
+
+
+LaTeX Warning: Label `fig_1' multiply defined.
+
+
+LaTeX Warning: Label `fig_1' multiply defined.
+
+
+LaTeX Warning: Label `fig_1' multiply defined.
+
+
+LaTeX Warning: Label `fig_1' multiply defined.
+
+
+LaTeX Warning: Label `fig_1' multiply defined.
+
+
+LaTeX Warning: Label `fig_1' multiply defined.
+
+
+LaTeX Warning: Label `fig_1' multiply defined.
+
 )
 \openout1 = `InformaFinal-Metaheuristica.aux'.
 
@@ -454,76 +476,109 @@ y/m/n/10 g\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
  []
 
 [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+<ack-1-ga.jpg, id=90, 458.46281pt x 227.34938pt>
+File: ack-1-ga.jpg Graphic file (type jpg)
+<use ack-1-ga.jpg>
+Package pdftex.def Info: ack-1-ga.jpg  used on input line 153.
+(pdftex.def)             Requested size: 458.46169pt x 227.34882pt.
+ [6]
+<ack-1-de.jpg, id=95, 355.3275pt x 208.52907pt>
+File: ack-1-de.jpg Graphic file (type jpg)
+<use ack-1-de.jpg>
+Package pdftex.def Info: ack-1-de.jpg  used on input line 159.
+(pdftex.def)             Requested size: 355.32661pt x 208.52855pt.
+<ack-2-ga.jpg, id=96, 303.38344pt x 207.02344pt>
+File: ack-2-ga.jpg Graphic file (type jpg)
+<use ack-2-ga.jpg>
+Package pdftex.def Info: ack-2-ga.jpg  used on input line 165.
+(pdftex.def)             Requested size: 303.38269pt x 207.02292pt.
+ [7 <./ack-1-ga.jpg> <./ack-1-de.jpg>]
+<ack-2-de.jpg, id=104, 300.3722pt x 206.27063pt>
+File: ack-2-de.jpg Graphic file (type jpg)
+<use ack-2-de.jpg>
+Package pdftex.def Info: ack-2-de.jpg  used on input line 171.
+(pdftex.def)             Requested size: 300.37144pt x 206.27011pt.
+<ack-3-ga.jpg, id=105, 310.91156pt x 206.27063pt>
+File: ack-3-ga.jpg Graphic file (type jpg)
+<use ack-3-ga.jpg>
+Package pdftex.def Info: ack-3-ga.jpg  used on input line 177.
+(pdftex.def)             Requested size: 310.91078pt x 206.27011pt.
+ [8 <./ack-2-ga.jpg> <./ack-2-de.jpg>]
+<ack-3-de.jpg, id=112, 309.40594pt x 207.77625pt>
+File: ack-3-de.jpg Graphic file (type jpg)
+<use ack-3-de.jpg>
+Package pdftex.def Info: ack-3-de.jpg  used on input line 183.
+(pdftex.def)             Requested size: 309.40518pt x 207.77573pt.
+<ack-4-ga.jpg, id=113, 457.71pt x 225.09094pt>
+File: ack-4-ga.jpg Graphic file (type jpg)
+<use ack-4-ga.jpg>
+Package pdftex.def Info: ack-4-ga.jpg  used on input line 189.
+(pdftex.def)             Requested size: 457.7089pt x 225.09038pt.
+ [9 <./ack-3-ga.jpg> <./ack-3-de.jpg>]
+<ack-4-de.jpg, id=120, 351.56343pt x 210.03468pt>
+File: ack-4-de.jpg Graphic file (type jpg)
+<use ack-4-de.jpg>
+Package pdftex.def Info: ack-4-de.jpg  used on input line 195.
+(pdftex.def)             Requested size: 351.56256pt x 210.03416pt.
+ [10 <./ack-4-ga.jpg> <./ack-4-de.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 []\OT1/cmr/m/n/10 .[][Wikipedia][]$\OT1/cmtt/m/n/10 https : / / en . wikipedia 
 . org / wiki / Evolutionary _
  []
 
-[6]
 (C:\Users\Fran\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-[7] (InformaFinal-Metaheuristica.toc
+[11] (InformaFinal-Metaheuristica.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write5
 \openout5 = `InformaFinal-Metaheuristica.toc'.
 
- [8] (InformaFinal-Metaheuristica.aux
+ [12] (InformaFinal-Metaheuristica.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 
-Package rerunfilecheck Warning: File `InformaFinal-Metaheuristica.out' has chan
-ged.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: Checksums for `InformaFinal-Metaheuristica.out':
-(rerunfilecheck)             Before: 3BC5E6A908B6A88FCF5B018E21B768C2;2219
-(rerunfilecheck)             After:  822DA9EE86BAD8D2BC9AB296F36F9514;1991.
+Package rerunfilecheck Info: File `InformaFinal-Metaheuristica.out' has not cha
+nged.
+(rerunfilecheck)             Checksum: 822DA9EE86BAD8D2BC9AB296F36F9514;1991.
  ) 
 Here is how much of TeX's memory you used:
- 11931 strings out of 478582
- 187906 string characters out of 2844816
- 677263 words of memory out of 3000000
- 29937 multiletter control sequences out of 15000+600000
+ 12000 strings out of 478582
+ 188921 string characters out of 2844816
+ 678268 words of memory out of 3000000
+ 29987 multiletter control sequences out of 15000+600000
  475315 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,74p,804b,1268s stack positions out of 10000i,1000n,20000p,200000b,80000s
-
-pdfTeX warning (dest): name{section.6} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
- <C:\Users\Fran\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm100
-0.pk><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmbx10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmbx9.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Fran/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Fran/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Fran/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Fran
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Use
-rs/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-<C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-5.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr7.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr9.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Fran/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Fran/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on InformaFinal-Metaheuristica.pdf (8 pages, 266950 bytes).
+ <C:\Users\Fran\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
+000.pk><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmbx9.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Fran/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Fran/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Fran/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Fran/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Fr
+an/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/U
+sers/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pf
+b><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr5.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr7.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr9.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Fran/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Fran/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on InformaFinal-Metaheuristica.pdf (12 pages, 461086 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 
