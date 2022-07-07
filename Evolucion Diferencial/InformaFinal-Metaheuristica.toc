@@ -8,6 +8,7 @@
 \contentsline {section}{\numberline {3}Propuesta algorítmica}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}El algoritmo Genetico}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}El algoritmo Evolucion Diferencial}{5}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Resultados}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Estadisticas Algoritmo Genetico}{11}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Conclusiones}{11}{section.4}%
+\contentsline {section}{\numberline {4}Resultados}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Estadisticas Algoritmo Genetico}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Estadisticas Evolucion Diferencial}{11}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Conclusiones}{12}{section.5}%
