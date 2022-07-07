@@ -72,21 +72,21 @@ En este breve trabajo de estudio de algoritmos metaheuristicos, utilizaremos los
 
 \subsection{Conjunto de funciones Ackley a utilizar}
 %$  X  $
- 
-$$f_1(x) = -20e^{-0.02}\sqrt{D^{-1}\sum_{i=1}^{D}x_{i}^2}-e^{D-1\sum_{i=1}^{D}cos(2\pi x_i)}+20+e$$
 
-$$-35\leq x_i \leq 35, f(x^*) = 0$$
+\textbf{Akcley1(x) = } $$ -20e^{-0.02}\sqrt{D^{-1}\sum_{i=1}^{D}x_{i}^2}-e^{D-1\sum_{i=1}^{D}cos(2\pi x_i)}+20+e$$
+
+\textbf{Óptimo global del intervalo} $$[-35\leq x_i \leq 35], ak1(x^*) = 0$$
 
 
-$$f_2(x) = -200e^{-0.02}\sqrt{x_1^2+x_2^2}$$
+\textbf{Akcley2(x) = } $$-200e^{-0.02}\sqrt{x_1^2+x_2^2}$$
 
-$$-32\leq x_i \leq 32, f(x^*) = -200$$
+\textbf{Óptimo global del intervalo} $$[-32\leq x_i \leq 32], ak2(x^*) = -200$$
 
-$$f_3(x) = 200e^{-0.02}\sqrt{x_1^2+x_2^2}+5e^{cos(3x_1)+sin(3x_2)}$$
-$$-32\leq x_i \leq 32, x^* = (0, \approx -0.4), f(x^*) \approx -219.1418$$
+\textbf{Akcley3(x) = } $$200e^{-0.02}\sqrt{x_1^2+x_2^2}+5e^{cos(3x_1)+sin(3x_2)}$$
+\textbf{Óptimo global del intervalo} $$[-32\leq x_i \leq 32], x^* = (0, \approx -0.4), akl3(x^*) \approx -219.1418$$
 
-$$f_4(x) = \sum_{i=1}^{D}(e^{-0.2}\sqrt{x_i^2+x_{i+1}^2}+3(cos(2x_i)+sin(2x_{i+1}))$$
-$$-35\leq x_i \leq 35, x=f(\{-1.479252,-0.739807\},\{1.479252,-0.739807\}), f(x^*) \approx -3.917275$$ 
+\textbf{Akcley4(x) = } $$ \sum_{i=1}^{D}(e^{-0.2}\sqrt{x_i^2+x_{i+1}^2}+3(cos(2x_i)+sin(2x_{i+1}))$$
+\textbf{Óptimo global del intervalo} $$[-35\leq x_i \leq 35], x=f(\{-1.479252,-0.739807\},\{1.479252,-0.739807\}), f(x^*) \approx -3.917275$$ 
 
 \section{Propuesta algorítmica} % El titulo de esta y el resto de las secciones es orientativa
 
