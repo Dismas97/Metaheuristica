@@ -158,43 +158,43 @@ A continuación mostraremos la evolucion de las soluciones para cada Ackley en a
 \begin{figure}[H]
 \centerline{\includegraphics{ack-1-de.jpg}}
 \caption{Evolucion de la solución DE - Ackley1}
-\label{fig_1}
+\label{fig_2}
 \end{figure}
 
 \begin{figure}[H]
 \centerline{\includegraphics{ack-2-ga.jpg}}
 \caption{Evolucion de la solución GA - Ackley2}
-\label{fig_1}
+\label{fig_3}
 \end{figure}
 
 \begin{figure}[H]
 \centerline{\includegraphics{ack-2-de.jpg}}
 \caption{Evolucion de la solución DE - Ackley2}
-\label{fig_1}
+\label{fig_4}
 \end{figure}
 
 \begin{figure}[H]
 \centerline{\includegraphics{ack-3-ga.jpg}}
 \caption{Evolucion de la solución GA - Ackley3}
-\label{fig_1}
+\label{fig_5}
 \end{figure}
 
 \begin{figure}[H]
 \centerline{\includegraphics{ack-3-de.jpg}}
 \caption{Evolucion de la solución DE - Ackley3}
-\label{fig_1}
+\label{fig_6}
 \end{figure}
 
 \begin{figure}[H]
 \centerline{\includegraphics{ack-4-ga.jpg}}
 \caption{Evolucion de la solución GA - Ackley4}
-\label{fig_1}
+\label{fig_7}
 \end{figure}
 
 \begin{figure}[H]
 \centerline{\includegraphics{ack-4-de.jpg}}
 \caption{Evolucion de la solución DE - Ackley4}
-\label{fig_1}
+\label{fig_8}
 \end{figure}
 
 Con solamente una ejecucion podemos ver como DE encuentra la solucion en muchas menos iteraciones que GA, ademas de encontrar la solucion optima globlar en Ackley 1, 2 y 3.
@@ -242,13 +242,8 @@ Mediana:  0.0
 Desviacion:  0.0
 \end{itemize}
 
-
-
-
-
-
 \section{Conclusiones}
-
+Como hemos visto tanto GA y ED obtienen soluciones satisfactorias, pero, la diferencia es notable, ED se desempeña mejor en casi todos los aspectos, no solo obtiene la solucion en muchas menos iteraciones, menos de 1500, sino que es capaz de encontrar el optimo global en tres de cuatro funciones, a diferencia de GA que no pudo encontrar el optimo global en ninguna.
 %------------------------------------------------ 
 \section*{Agradecimientos}
 Prof. Guillermo Leguizamon
@@ -268,15 +263,218 @@ Prof. Guillermo Leguizamon
 
 
 \end{thebibliography} 
- 
-\section{Código del Algoritmo}
+\section*{Codigo compartido}
+\begin{lstlisting}[language=Python]
+def ackley_1(individuo):
+    global D
+    sum1 = 0.0
+    sum2 = 0.0
+    for g in individuo:
+        sum1 = sum1 + g**2.0
+        sum2 = sum2 + np.cos(2.0*np.pi*g)
+    return -20.0*np.exp(-0.02*np.sqrt(sum1/D)) - np.exp(sum2/D) + 20 + np.e
+
+
+def ackley_2(individuo):
+    return -200*np.exp(-0.02*np.sqrt(individuo[0]**2+individuo[1]**2))
+
+def ackley_3(individuo):
+    return ackley_2(individuo)+5*np.exp(np.cos(3*individuo[0])+np.sin(3*individuo[1]))
+
+def ackley_4(individuo):
+    global D
+    suma = 0.0
+    i=0
+    while (i+1 < D):
+        suma = suma + np.exp(-0.2)*np.sqrt(individuo[i]**2+individuo[i+1]**2)
+        +3*(np.cos(2*individuo[i])+np.sin(2*individuo[i+1]))
+        i = i + 1
+    return suma
+
+def init_populations(pop_size = PSIZE):
+    global D
+    pop_1 = []
+    pop_2 = []
+    pop_3 = []
+    pop_4 = []
+    for i in range(pop_size):
+        pop_1.append([random.uniform(-35, 35) for i in range(D)])
+        pop_2.append([random.uniform(-32, 32), random.uniform(-32, 32)])
+        pop_3.append([random.uniform(-32, 32), random.uniform(-32, 32)])
+        pop_4.append([random.uniform(-35, 35) for i in range(D)])
+    return [np.array(pop_1),np.array(pop_2),np.array(pop_3),np.array(pop_4)]
+
+def calculate_fitness(pop,ackley):
+    switch = {
+        1: ackley_1,
+        2: ackley_2,
+        3: ackley_3,
+        4: ackley_4
+    }
+    scores = []
+    for ind in pop:
+        scores.append(switch.get(ackley)(ind))
+    return scores
+\end{lstlisting}
+
+\section*{Código del Algoritmo DE}
+\begin{lstlisting}[language=Python]
+# define crossover operation
+def crossover(mutated, target, dims, cr):
+    # generate a uniform random value for every dimension
+    p = random.rand(dims)
+    # generate trial vector by binomial crossover
+    trial = [mutated[i] if p[i] < cr else target[i] for i in range(dims)]
+    return trial
+
+# define mutation operation
+def mutation(x, F):
+    return x[0] + F * (x[1] - x[2])
+
+# define boundary check operation
+def check_bounds(mutated, ackley):
+    if ackley == 2 or ackley == 3:
+         mutated_bound = np.clip(mutated, -32, 32)
+    else:
+        #Va de i hasta D                       tomando li & ls
+        mutated_bound = [np.clip(mutated[i], -35, 35) for i in range(D)]
+    return mutated_bound
+
+def differential_evolution(ackley,pop,scores,best_score,best_scores_progress,seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    mejor_puntaje = float('inf')
+    mejor_solucion = []
+    obj_iter = list()
+    
+    tam_ind = len(pop[0])
+    # Init, find the best performing vector of initial population
+    best_score=np.min(scores)
+    best_scores_progress.append(best_score)
+    
+    for generation in range(MAXG):
+        #new_population=[]
+        if best_score < mejor_puntaje:
+            mejor_puntaje = best_score
+            mejor_solucion = pop[np.argmin(scores)][:]
+        # iterate over all candidate solutions
+        for i in range(int(PSIZE)):
+            # choose three candidates, a, b and c, that are not the current one
+            candidates = [candidate for candidate in range(PSIZE) if candidate != i]
+            a, b, c = pop[random.choice(candidates, 3, replace=False)]
+            # perform mutation
+            mutated = mutation([a, b, c], F)
+            # check that lower and upper bounds are retained after mutation
+            mutated = check_bounds(mutated, ackley)
+            # perform crossover binomial
+            trial = crossover(mutated, pop[i], tam_ind, Cr)
+           
+            # compute objective function value for target vector
+            pop_arr = []
+            pop_arr.append(pop[i])
+            obj_target = calculate_fitness(pop_arr,ackley) 
+            # compute objective function value for trial vector
+            pop_trial = []
+            pop_trial.append(trial)
+            obj_trial = calculate_fitness(pop_trial,ackley)
+            
+            # perform selection
+            if obj_trial[0] < obj_target[0]:
+                # replace the target vector with the trial vector
+                pop[i] = trial
+                # store the new objective function value
+                scores[i] = obj_trial[0]
+                
+        # find the best performing vector at each iteration
+        best_score = np.min(scores)    
+        best_scores_progress.append(best_score)
+    return [mejor_puntaje, mejor_solucion]
+
+\end{lstlisting}
+
+\section*{Código del Algoritmo GA}
 \begin{lstlisting}[language=Python]
 
-def genetiquear():
-	while(not finish):
-		print("codeando")
-return "code"
+def select_individual_by_tournament(population, scores):
+    population_size = len(scores)
+    # Pick individuals for tournament
+    fighter_1 = random.randint(0, population_size-1)
+    fighter_2 = random.randint(0, population_size-1)
+    while(fighter_1==fighter_2):
+        fighter_2=random.randint(0,population_size-1)
+    # Get fitness score for each
+    fighter_1_fitness = scores[fighter_1]
+    fighter_2_fitness = scores[fighter_2]
+    # Identify undividual with highest fitness
+    # Fighter 1 will win if score are equal
+    if fighter_1_fitness <= fighter_2_fitness:
+        winner = fighter_1
+    else:
+        winner = fighter_2
+    # Return the chromsome of the winner
+    return population[winner, :]
 
+def crossover(parent_1,parent_2):
+    chromosome_length = len(parent_1)
+    child1 = parent_1[:]
+    child2 = parent_2[:]
+    if chromosome_length == 2:
+        child1[1] = parent_2[1]
+        child2[1] = parent_1[1]
+    else:
+        alfa = random.random()
+        pivote = math.floor((chromosome_length-1)*alfa)
+        while pivote==0 or pivote == chromosome_length-1: #Esto en teoria nunca pasa
+            alfa = random.random()
+            pivote = math.floor((chromosome_length-1)*alfa)
+        child1[pivote:] = parent_2[pivote:]
+        child2[pivote:] = parent_1[pivote:]
+    return child1, child2
+
+def mutation(ind):
+    chromosome_length = len(ind)
+    i=random.randint(0,chromosome_length-1)
+    if chromosome_length == 2:
+        b = [-32,32]
+    else:
+        b = [-35,35]
+    if random.random() < 0.5:
+        ind[i] = ind[i] + random.random()*(b[1]-ind[i])
+    else:
+        ind[i] = ind[i] - random.random()*(ind[i]-b[0])
+    return ind
+
+def ejecucion_ga(pop,ackley,scores,best_score,best_scores_progress,seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    mejor_puntaje = float('inf')
+    mejor_solucion = []
+    for generation in range(MAXG):
+        new_population=[]
+        if best_score < mejor_puntaje:
+            mejor_puntaje = best_score
+            mejor_solucion = pop[np.argmin(scores)][:]
+        for i in range(int(PSIZE/2)):
+            parent_1 = select_individual_by_tournament(pop, scores)
+            parent_2 = select_individual_by_tournament(pop, scores)
+            #Evolucion
+            if np.random.random()<PC:
+                child_1, child_2 = crossover(parent_1, parent_2)
+            else:
+                child_1=parent_1
+                child_2=parent_2
+            #Mutacion
+            if np.random.random()<PM:
+                mutation(child_1)
+            if np.random.random()<PM:
+                mutation(child_2)
+            new_population.append(child_1)
+            new_population.append(child_2)
+        pop=np.array(new_population)
+        scores=calculate_fitness(pop,ackley)
+        best_score=np.min(scores)
+        best_scores_progress.append(best_score)
+    return [mejor_puntaje, mejor_solucion]
 \end{lstlisting}
 \newpage
 \tableofcontents

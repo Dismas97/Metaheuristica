@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.14)  7 JUL 2022 16:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.14)  7 JUL 2022 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -351,28 +351,6 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 ) (InformaFinal-Metaheuristica.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
-
-
-LaTeX Warning: Label `fig_1' multiply defined.
-
-
-LaTeX Warning: Label `fig_1' multiply defined.
-
-
-LaTeX Warning: Label `fig_1' multiply defined.
-
-
-LaTeX Warning: Label `fig_1' multiply defined.
-
-
-LaTeX Warning: Label `fig_1' multiply defined.
-
-
-LaTeX Warning: Label `fig_1' multiply defined.
-
-
-LaTeX Warning: Label `fig_1' multiply defined.
-
 )
 \openout1 = `InformaFinal-Metaheuristica.aux'.
 
@@ -476,74 +454,246 @@ y/m/n/10 g\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
  []
 
 [4] [5]
-<ack-1-ga.jpg, id=90, 458.46281pt x 227.34938pt>
+<ack-1-ga.jpg, id=102, 458.46281pt x 227.34938pt>
 File: ack-1-ga.jpg Graphic file (type jpg)
 <use ack-1-ga.jpg>
 Package pdftex.def Info: ack-1-ga.jpg  used on input line 153.
 (pdftex.def)             Requested size: 458.46169pt x 227.34882pt.
  [6]
-<ack-1-de.jpg, id=95, 355.3275pt x 208.52907pt>
+<ack-1-de.jpg, id=107, 355.3275pt x 208.52907pt>
 File: ack-1-de.jpg Graphic file (type jpg)
 <use ack-1-de.jpg>
 Package pdftex.def Info: ack-1-de.jpg  used on input line 159.
 (pdftex.def)             Requested size: 355.32661pt x 208.52855pt.
-<ack-2-ga.jpg, id=96, 303.38344pt x 207.02344pt>
+<ack-2-ga.jpg, id=108, 303.38344pt x 207.02344pt>
 File: ack-2-ga.jpg Graphic file (type jpg)
 <use ack-2-ga.jpg>
 Package pdftex.def Info: ack-2-ga.jpg  used on input line 165.
 (pdftex.def)             Requested size: 303.38269pt x 207.02292pt.
  [7 <./ack-1-ga.jpg> <./ack-1-de.jpg>]
-<ack-2-de.jpg, id=104, 300.3722pt x 206.27063pt>
+<ack-2-de.jpg, id=116, 300.3722pt x 206.27063pt>
 File: ack-2-de.jpg Graphic file (type jpg)
 <use ack-2-de.jpg>
 Package pdftex.def Info: ack-2-de.jpg  used on input line 171.
 (pdftex.def)             Requested size: 300.37144pt x 206.27011pt.
-<ack-3-ga.jpg, id=105, 310.91156pt x 206.27063pt>
+<ack-3-ga.jpg, id=117, 310.91156pt x 206.27063pt>
 File: ack-3-ga.jpg Graphic file (type jpg)
 <use ack-3-ga.jpg>
 Package pdftex.def Info: ack-3-ga.jpg  used on input line 177.
 (pdftex.def)             Requested size: 310.91078pt x 206.27011pt.
  [8 <./ack-2-ga.jpg> <./ack-2-de.jpg>]
-<ack-3-de.jpg, id=112, 309.40594pt x 207.77625pt>
+<ack-3-de.jpg, id=124, 309.40594pt x 207.77625pt>
 File: ack-3-de.jpg Graphic file (type jpg)
 <use ack-3-de.jpg>
 Package pdftex.def Info: ack-3-de.jpg  used on input line 183.
 (pdftex.def)             Requested size: 309.40518pt x 207.77573pt.
-<ack-4-ga.jpg, id=113, 457.71pt x 225.09094pt>
+<ack-4-ga.jpg, id=125, 457.71pt x 225.09094pt>
 File: ack-4-ga.jpg Graphic file (type jpg)
 <use ack-4-ga.jpg>
 Package pdftex.def Info: ack-4-ga.jpg  used on input line 189.
 (pdftex.def)             Requested size: 457.7089pt x 225.09038pt.
  [9 <./ack-3-ga.jpg> <./ack-3-de.jpg>]
-<ack-4-de.jpg, id=120, 351.56343pt x 210.03468pt>
+<ack-4-de.jpg, id=132, 351.56343pt x 210.03468pt>
 File: ack-4-de.jpg Graphic file (type jpg)
 <use ack-4-de.jpg>
 Package pdftex.def Info: ack-4-de.jpg  used on input line 195.
 (pdftex.def)             Requested size: 351.56256pt x 210.03416pt.
- [10 <./ack-4-ga.jpg> <./ack-4-de.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+ [10 <./ack-4-ga.jpg> <./ack-4-de.jpg>] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 []\OT1/cmr/m/n/10 .[][Wikipedia][]$\OT1/cmtt/m/n/10 https : / / en . wikipedia 
 . org / wiki / Evolutionary _
  []
 
-[11]
 (C:\Users\Fran\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-[12] (InformaFinal-Metaheuristica.toc
+Overfull \hbox (105.00458pt too wide) in paragraph at lines 275--278
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (75.00427pt too wide) in paragraph at lines 279--281
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (171.00525pt too wide) in paragraph at lines 282--284
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 2
+88.
+(C:\Users\Fran\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 288.
+
+Overfull \hbox (117.0047pt too wide) in paragraph at lines 289--290
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 290--291
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[12]
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 301--302
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 302--303
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 303--304
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 304--305
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (111.00464pt too wide) in paragraph at lines 305--307
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
+08.
+(C:\Users\Fran\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 308.
+
+Overfull \hbox (93.00446pt too wide) in paragraph at lines 327--328
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][] 
+ []
+
+[13]
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 339--340
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 340--341
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (153.00507pt too wide) in paragraph at lines 343--344
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 351--352
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (129.00482pt too wide) in paragraph at lines 362--363
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (159.00513pt too wide) in paragraph at lines 363--364
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (75.00427pt too wide) in paragraph at lines 364--365
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (105.00458pt too wide) in paragraph at lines 367--368
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 370--372
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 372--373
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 375--376
+[][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 376--377
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 379--381
+[][][][][][][][][][][][][][] 
+ []
+
+[14]
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 383--384
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 388--389
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (159.00513pt too wide) in paragraph at lines 427--428
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[15]
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 429--430
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (93.00446pt too wide) in paragraph at lines 447--448
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (57.00409pt too wide) in paragraph at lines 458--459
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (57.00409pt too wide) in paragraph at lines 459--460
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 462--463
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+[16] [17] (InformaFinal-Metaheuristica.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write5
 \openout5 = `InformaFinal-Metaheuristica.toc'.
 
- [13] (InformaFinal-Metaheuristica.aux
+ [18]
+(InformaFinal-Metaheuristica.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-
-LaTeX Warning: There were multiply-defined labels.
-
 
 Package rerunfilecheck Warning: File `InformaFinal-Metaheuristica.out' has chan
 ged.
@@ -551,41 +701,53 @@ ged.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `InformaFinal-Metaheuristica.out':
-(rerunfilecheck)             Before: 822DA9EE86BAD8D2BC9AB296F36F9514;1991
-(rerunfilecheck)             After:  708525DFA0F0FA3C3BF628DB09CBA23A;2210.
+(rerunfilecheck)             Before: 58D24B76DF7ED09D8FDB1B90147A3DDF;2531
+(rerunfilecheck)             After:  038968D3B7742B80AD404545F62C0C9D;2057.
  ) 
 Here is how much of TeX's memory you used:
- 12003 strings out of 478582
- 188947 string characters out of 2844816
- 678034 words of memory out of 3000000
- 29988 multiletter control sequences out of 15000+600000
+ 12358 strings out of 478582
+ 193974 string characters out of 2844816
+ 732205 words of memory out of 3000000
+ 30129 multiletter control sequences out of 15000+600000
  475315 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,74p,804b,1268s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Fran\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
-000.pk><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmbx9.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Fran/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Fran/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Fran/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Fran/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Fr
-an/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/U
-sers/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pf
-b><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr5.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr7.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr9.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Fran/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Fran/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on InformaFinal-Metaheuristica.pdf (13 pages, 462539 bytes).
+ 60i,6n,74p,804b,1998s stack positions out of 10000i,1000n,20000p,200000b,80000s
+
+pdfTeX warning (dest): name{section.7} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.6} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.5} has been referenced but does not exist, 
+replaced by a fixed one
+
+ <C:\Users\Fran\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm100
+0.pk><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmbx10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmbx9.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Fran/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Fran/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Fran/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Fran
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Use
+rs/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+<C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+5.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr7.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmr9.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Fran/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Fran/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/Fran/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on InformaFinal-Metaheuristica.pdf (18 pages, 514727 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 552 PDF objects out of 1000 (max. 8388607)
+ 260 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
